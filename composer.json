@@ -1,0 +1,19 @@
+{
+    "name": "ricardo/phpcleanarchitecture",
+    "autoload": {
+        "psr-4": {
+            "Ricardo\\Phpcleanarchitecture\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Ricardo Tavares Dias",
+            "email": "ricardo.ti.sistemas@gmail.com"
+        }
+    ],
+    "require": {
+        "slim/slim": "4.*",
+        "slim/psr7": "^1.7",
+        "nyra/zod": "^1.0"
+    }
+}
