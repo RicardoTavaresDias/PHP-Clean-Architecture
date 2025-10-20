@@ -1,6 +1,6 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\infrastructure\repositories\dtos;
+namespace App\infrastructure\repositories\dtos;
 
 interface RepositoryDtoInterface
 {

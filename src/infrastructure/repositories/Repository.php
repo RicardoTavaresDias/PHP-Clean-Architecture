@@ -1,7 +1,7 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\infrastructure\repositories;
-use Ricardo\Phpcleanarchitecture\infrastructure\repositories\dtos\RepositoryDtoInterface;
+namespace App\infrastructure\repositories;
+use App\infrastructure\repositories\dtos\RepositoryDtoInterface;
 
 class Repository implements RepositoryDtoInterface {
   private string $file = __DIR__ . '/data.json';

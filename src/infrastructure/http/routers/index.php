@@ -2,9 +2,9 @@
 
 use Slim\App;
 use Slim\Routing\RouteCollectorProxy;
-use Ricardo\Phpcleanarchitecture\infrastructure\http\Middleware\Authenticated;
-use Ricardo\Phpcleanarchitecture\shared\ContainerDependency;
-use Ricardo\Phpcleanarchitecture\infrastructure\http\Middleware\UserAuthorization;
+use App\infrastructure\http\Middleware\Authenticated;
+use App\shared\ContainerDependency;
+use App\infrastructure\http\Middleware\UserAuthorization;
 
 $containerDependency = new ContainerDependency();
 

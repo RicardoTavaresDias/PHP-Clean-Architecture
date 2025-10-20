@@ -1,8 +1,8 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\domain\entity;
+namespace App\domain\entity;
 
-use Ricardo\Phpcleanarchitecture\domain\entity\dtos\UserDtoInterface;
+use App\domain\entity\dtos\UserDtoInterface;
 
 class UserEntity implements UserDtoInterface{
   private string $name;

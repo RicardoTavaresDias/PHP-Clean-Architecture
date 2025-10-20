@@ -1,7 +1,7 @@
 <?php
 
 use Slim\Factory\AppFactory;
-use Ricardo\Phpcleanarchitecture\infrastructure\http\Middleware\ErrorHandling;
+use App\infrastructure\http\Middleware\ErrorHandling;
 
 require __DIR__ . '/../../../vendor/autoload.php';
 

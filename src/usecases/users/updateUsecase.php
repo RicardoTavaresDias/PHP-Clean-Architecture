@@ -1,11 +1,11 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\usecases\users;
+namespace App\usecases\users;
 
-use Ricardo\Phpcleanarchitecture\domain\entity\UserEntity;
-use Ricardo\Phpcleanarchitecture\infrastructure\repositories\dtos\RepositoryDtoInterface;
-use Ricardo\Phpcleanarchitecture\usecases\dtos\UpdateDtoInterface;
-use Ricardo\Phpcleanarchitecture\domain\exceptions\AppError;
+use App\domain\entity\UserEntity;
+use App\infrastructure\repositories\dtos\RepositoryDtoInterface;
+use App\usecases\dtos\UpdateDtoInterface;
+use App\domain\exceptions\AppError;
 use Nyra\Zod\Z;
 
 require_once __DIR__ . '/../dtos/UsecaseDtoInterface.php';

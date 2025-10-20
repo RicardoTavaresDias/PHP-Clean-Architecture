@@ -1,6 +1,6 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\usecases\dtos;
+namespace App\usecases\dtos;
 
 interface CreateDtoInterface
 {

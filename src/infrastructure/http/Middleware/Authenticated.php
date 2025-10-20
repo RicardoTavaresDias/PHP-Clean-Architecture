@@ -1,6 +1,6 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\infrastructure\http\Middleware;
+namespace App\infrastructure\http\Middleware;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;

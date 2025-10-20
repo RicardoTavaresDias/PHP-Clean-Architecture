@@ -1,12 +1,12 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\usecases;
+namespace App\usecases;
 
-use Ricardo\Phpcleanarchitecture\usecases\users\CreateUsecase;
-use Ricardo\Phpcleanarchitecture\usecases\users\GetAllUsecase;
-use Ricardo\Phpcleanarchitecture\usecases\users\GetByIdUsecase;
-use Ricardo\Phpcleanarchitecture\usecases\users\UpdateUsecase;
-use Ricardo\Phpcleanarchitecture\usecases\users\RemoveUsecase;
+use App\usecases\users\CreateUsecase;
+use App\usecases\users\GetAllUsecase;
+use App\usecases\users\GetByIdUsecase;
+use App\usecases\users\UpdateUsecase;
+use App\usecases\users\RemoveUsecase;
 
 class ContrutorUserUsecases {
     public CreateUsecase $create;

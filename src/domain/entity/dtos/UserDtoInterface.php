@@ -1,6 +1,6 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\domain\entity\dtos;
+namespace App\domain\entity\dtos;
 
 interface UserDtoInterface
 {

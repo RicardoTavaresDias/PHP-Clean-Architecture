@@ -2,7 +2,7 @@
     "name": "ricardo/phpcleanarchitecture",
     "autoload": {
         "psr-4": {
-            "Ricardo\\Phpcleanarchitecture\\": "src/"
+            "App\\": "src/"
         }
     },
     "authors": [

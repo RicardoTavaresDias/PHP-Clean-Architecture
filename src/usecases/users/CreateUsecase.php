@@ -1,10 +1,10 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\usecases\users;
+namespace App\usecases\users;
 
-use Ricardo\Phpcleanarchitecture\domain\entity\UserEntity;
-use Ricardo\Phpcleanarchitecture\infrastructure\repositories\dtos\RepositoryDtoInterface;
-use Ricardo\Phpcleanarchitecture\usecases\dtos\CreateDtoInterface;
+use App\domain\entity\UserEntity;
+use App\infrastructure\repositories\dtos\RepositoryDtoInterface;
+use App\usecases\dtos\CreateDtoInterface;
 
 require_once __DIR__ . '/../dtos/UsecaseDtoInterface.php';
 

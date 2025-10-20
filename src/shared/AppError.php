@@ -1,6 +1,6 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\shared;
+namespace App\shared;
 
 use Exception;
 

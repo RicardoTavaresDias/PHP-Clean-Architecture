@@ -1,10 +1,10 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\infrastructure\http\controllers;
+namespace App\infrastructure\http\controllers;
 
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
-use Ricardo\Phpcleanarchitecture\usecases\ContrutorUserUsecases;
+use App\usecases\ContrutorUserUsecases;
 
 class UserController {
     private ContrutorUserUsecases $usecase;

@@ -1,16 +1,16 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\shared;
+namespace App\shared;
 
-use Ricardo\Phpcleanarchitecture\domain\entity\UserEntity;
-use Ricardo\Phpcleanarchitecture\infrastructure\repositories\Repository;
-use Ricardo\Phpcleanarchitecture\infrastructure\http\controllers\UserController;
-use Ricardo\Phpcleanarchitecture\usecases\users\CreateUsecase;
-use Ricardo\Phpcleanarchitecture\usecases\users\GetAllUsecase;
-use Ricardo\Phpcleanarchitecture\usecases\users\GetByIdUsecase;
-use Ricardo\Phpcleanarchitecture\usecases\users\RemoveUsecase;
-use Ricardo\Phpcleanarchitecture\usecases\users\UpdateUsecase;
-use Ricardo\Phpcleanarchitecture\usecases\ContrutorUserUsecases;
+use App\domain\entity\UserEntity;
+use App\infrastructure\repositories\Repository;
+use App\infrastructure\http\controllers\UserController;
+use App\usecases\users\CreateUsecase;
+use App\usecases\users\GetAllUsecase;
+use App\usecases\users\GetByIdUsecase;
+use App\usecases\users\RemoveUsecase;
+use App\usecases\users\UpdateUsecase;
+use App\usecases\ContrutorUserUsecases;
 
 class ContainerDependency {
     public Repository $repository;

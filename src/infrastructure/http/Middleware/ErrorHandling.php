@@ -1,8 +1,8 @@
 <?php
 
-namespace Ricardo\Phpcleanarchitecture\infrastructure\http\Middleware;
+namespace App\infrastructure\http\Middleware;
 
-use Ricardo\Phpcleanarchitecture\shared\AppError;
+use App\shared\AppError;
 use Nyra\Zod\Errors\ZodError;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
