@@ -5,7 +5,7 @@ namespace App\usecases\users;
 use App\domain\entity\UserEntity;
 use App\infrastructure\repositories\dtos\RepositoryDtoInterface;
 use App\usecases\dtos\UpdateDtoInterface;
-use App\domain\exceptions\AppError;
+use App\domain\exceptions\utils\AppError;
 use Nyra\Zod\Z;
 
 require_once __DIR__ . '/../dtos/UsecaseDtoInterface.php';

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\shared;
+namespace App\shared\utils;
 
 use Exception;
 

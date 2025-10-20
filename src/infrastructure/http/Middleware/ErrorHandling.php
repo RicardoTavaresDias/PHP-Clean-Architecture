@@ -2,7 +2,7 @@
 
 namespace App\infrastructure\http\Middleware;
 
-use App\shared\AppError;
+use App\shared\utils\AppError;
 use Nyra\Zod\Errors\ZodError;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
