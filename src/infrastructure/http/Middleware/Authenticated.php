@@ -4,17 +4,23 @@ namespace App\infrastructure\http\Middleware;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
+use Slim\Psr7\Response;
 
 class Authenticated {
+    private Response $response;
+
+    public function __construct(){
+        $this->response = new Response();
+    }
+    
     public function __invoke(Request $request, RequestHandler $handler) {
         $auth = $request->getHeaderLine('Authorization');
 
         if (!$auth){
-            $response = new \Slim\Psr7\Response(); // Criar um novo objeto Response
-            $response->getBody()->write(json_encode(['message' => "Token JWT não encontrado"]));
-            return $response->withStatus(401);
+            $this->response->getBody()->write(json_encode(['message' => "Token JWT não encontrado"]));
+            return $this->response->withStatus(401);
         }
 
-        $response = $handler->handle($request);
+        return $handler->handle($request);
     }
 }

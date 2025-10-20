@@ -8,24 +8,28 @@ use Psr\Http\Server\RequestHandlerInterface;
 use Slim\Psr7\Response;
 
 class UserAuthorization {
+  private ResponseInterface $response;
+
+  public function __construct(){
+    $this->response = new Response();
+  }
+
   public function __invoke(array $role) {
     return function (ServerRequestInterface $request, RequestHandlerInterface $handler)use ($role): ResponseInterface {
       $data = json_decode($request->getBody()->getContents(), true);
       $roleUser = $data['role'] ?? null;
 
       if (!$roleUser) {
-        $response = new Response();
-        $response->getBody()->write(json_encode([ 'message' => "Não autorizado." ]));
+        $this->response->getBody()->write(json_encode([ 'message' => "Não autorizado." ]));
 
-        return $response->withStatus(400)
+        return $this->response->withStatus(400)
                 ->withHeader('Content-Type', 'application/json');
       }
 
       if (!in_array($roleUser, $role)) {
-        $response = new Response();
-        $response->getBody()->write(json_encode([ 'message' => "Não autorizado." ]));
+        $this->response->getBody()->write(json_encode([ 'message' => "Não autorizado." ]));
 
-        return $response->withStatus(400)
+        return $this->response->withStatus(400)
                 ->withHeader('Content-Type', 'application/json');
       }
 
