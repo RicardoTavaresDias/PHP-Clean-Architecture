@@ -5,6 +5,7 @@ namespace App\usecases\users;
 use App\domain\entity\UserEntity;
 use App\infrastructure\repositories\dtos\RepositoryDtoInterface;
 use App\usecases\dtos\CreateDtoInterface;
+use App\shared\utils\AppError;
 
 require_once __DIR__ . '/../dtos/UsecaseDtoInterface.php';
 
@@ -24,6 +25,7 @@ class CreateUsecase implements CreateDtoInterface {
 
   public function execute(array $data): ?array {
     $pased = $this->validation($data);
+    $this->existUser($pased);
 
     $this->userEntity->setName($pased['name']);
     $this->userEntity->setEmail($pased['email']);
@@ -55,4 +57,18 @@ class CreateUsecase implements CreateDtoInterface {
 
     return $schema->parse($data);
   }
+
+  private function existUser ($data) {
+    $exist = $this->repository->getAll();
+
+    $filterResult = array_filter($exist, function($value) use ($data) {
+      return $value['email'] === $data['email'];
+    });
+
+    if($filterResult) {
+      throw new AppError("Email já existe", 400);
+    }
+
+    return;
+  } 
 }

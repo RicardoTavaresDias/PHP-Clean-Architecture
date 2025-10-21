@@ -39,6 +39,15 @@ class ErrorHandling implements MiddlewareInterface {
                 return $this->response->withStatus(400)
                     ->withHeader('Content-Type', 'application/json');
             }
+
+            if ($e->getMessage() === 'Expired token') {
+                $this->response->getBody()->write(json_encode([
+                    'message' => $e->getMessage()
+                ]));
+
+                return $this->response->withStatus(401)
+                    ->withHeader('Content-Type', 'application/json');
+            }
         
             $this->response->getBody()->write(json_encode([
                 'message' => $e->getMessage(),

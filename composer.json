@@ -5,6 +5,9 @@
             "App\\": "src/"
         }
     },
+    "scripts": {
+        "dev": "php -S localhost:8000 src/infrastructure/http/app.php"
+    },
     "authors": [
         {
             "name": "Ricardo Tavares Dias",
@@ -15,6 +18,7 @@
         "slim/slim": "4.*",
         "slim/psr7": "^1.7",
         "nyra/zod": "^1.0",
-        "vlucas/phpdotenv": "^5.6"
+        "vlucas/phpdotenv": "^5.6",
+        "firebase/php-jwt": "^6.11"
     }
 }

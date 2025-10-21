@@ -1,0 +1,16 @@
+{
+    "68f6b1ee40a22": {
+        "id": "68f6b1ee40a22",
+        "name": "Ricardo",
+        "email": "ricardo@email.com",
+        "password": "123456",
+        "role": "admin"
+    },
+    "68f6d38d95e97": {
+        "id": "68f6d38d95e97",
+        "name": "Ricardo tavares",
+        "email": "ricardo_tavares@email.com",
+        "password": "123456",
+        "role": "admin"
+    }
+}

@@ -5,6 +5,11 @@ namespace App\infrastructure\http\Middleware;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Psr\Http\Server\RequestHandlerInterface as RequestHandler;
 use Slim\Psr7\Response;
+use Exception;
+
+use App\shared\config\Env;
+use Firebase\JWT\JWT;
+use Firebase\JWT\Key;
 
 class Authenticated {
     private Response $response;
@@ -20,6 +25,20 @@ class Authenticated {
             $this->response->getBody()->write(json_encode(['message' => "Token JWT não encontrado"]));
             return $this->response->withStatus(401);
         }
+
+        $token = explode(" ", $auth)[1];
+
+        if (!$token) {
+            $this->response->getBody()->write(json_encode(['message' => "'Token JWT mal formatado'"]));
+            return $this->response->withStatus(401);
+        }
+
+        $decoded = JWT::decode($token, new Key(Env::get('SECRET')['SECRET'], 'HS256'));
+
+        $request = $request->withAttribute('user', [
+            'id' => $decoded->id,
+            'role' => $decoded->role
+        ]);
 
         return $handler->handle($request);
     }

@@ -12,6 +12,9 @@ class Router {
   public function register(App $app): void {
     $containerDependency = new ContainerDependency();
 
+    // Router Login
+    $app->post("/", [$containerDependency->loginController, 'authenticate']);
+
     // Router User
     $app->group('/user', function (RouteCollectorProxy $group) use ($containerDependency) {
       $group->get('', [$containerDependency->userController, 'show'])
@@ -28,7 +31,7 @@ class Router {
       
       $group->patch('/{id}', [$containerDependency->userController, 'updateUser'])
         ->add((new UserAuthorization())(['admin', 'member']));
-    });
-    // ->add(new Authenticated());
+    })
+     ->add(new Authenticated());
   }
 }

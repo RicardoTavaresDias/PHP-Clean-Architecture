@@ -11,10 +11,13 @@ use App\usecases\users\GetByIdUsecase;
 use App\usecases\users\RemoveUsecase;
 use App\usecases\users\UpdateUsecase;
 use App\usecases\ContrutorUserUsecases;
+use App\usecases\login\LoginUsecase;
+use App\infrastructure\http\controllers\LoginController;
 
 class ContainerDependency {
     public Repository $repository;
     public UserEntity $userEntity;
+    public LoginController $loginController;
     public CreateUsecase $createUsecase;
     public GetAllUsecase $getAllUsecase;
     public GetByIdUsecase $Byid;
@@ -22,6 +25,7 @@ class ContainerDependency {
     public UpdateUsecase $update;
     public UserController $userController;
     public ContrutorUserUsecases $userUsecases;
+    public LoginUsecase $loginUsecase;
     
     public function __construct() {
       $this->repository = new Repository();
@@ -53,6 +57,11 @@ class ContainerDependency {
         $this->userEntity
       );
 
+      // LoginUsecase
+      $this->loginUsecase = new LoginUsecase(
+        $this->repository
+      );
+
       // Construtor da classe UserUsecases
       $this->userUsecases = new ContrutorUserUsecases(
         $this->createUsecase,
@@ -60,7 +69,11 @@ class ContainerDependency {
         $this->Byid,
         $this->update,
         $this->remove
-        
+      );
+
+      // Controller da class LoginController
+      $this->loginController = new LoginController(
+        $this->loginUsecase
       );
 
       // Controler da classe UserController
