@@ -16,7 +16,7 @@ class UserAuthorization {
 
   public function __invoke(array $role) {
     return function (ServerRequestInterface $request, RequestHandlerInterface $handler)use ($role): ResponseInterface {
-      $data = json_decode($request->getBody()->getContents(), true);
+      $data = $request->getAttribute('user');
       $roleUser = $data['role'] ?? null;
 
       if (!$roleUser) {
