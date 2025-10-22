@@ -25,4 +25,4 @@ class Env {
 }
 
 // uso da variavel de ambiente SECRET
-//$port = Env::get('SECRET');
+//$port = Env::get()['SECRET'];

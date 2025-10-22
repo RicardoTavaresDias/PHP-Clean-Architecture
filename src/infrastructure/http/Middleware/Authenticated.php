@@ -33,7 +33,7 @@ class Authenticated {
             return $this->response->withStatus(401);
         }
 
-        $decoded = JWT::decode($token, new Key(Env::get('SECRET')['SECRET'], 'HS256'));
+        $decoded = JWT::decode($token, new Key(Env::get()['SECRET'], 'HS256'));
 
         $request = $request->withAttribute('user', [
             'id' => $decoded->id,

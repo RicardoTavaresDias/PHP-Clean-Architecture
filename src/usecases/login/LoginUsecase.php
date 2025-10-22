@@ -53,7 +53,7 @@ class LoginUsecase  {
       'id' => $firstUser['id'],
       'role' => $firstUser['role'],
       'exp' => time() + 15
-    ], Env::get('SECRET')['SECRET'], 'HS256');
+    ], Env::get()['SECRET'], 'HS256');
 
     return $token;
   }
